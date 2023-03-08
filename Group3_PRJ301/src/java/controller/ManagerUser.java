@@ -37,7 +37,14 @@ public class ManagerUser extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         UserDAO udao = new UserDAO();
-        ArrayList<User> userList = udao.getAllUser();
+        ArrayList<User> userlist = udao.getAllUser();
+        ArrayList<User> userList = new ArrayList<>();
+        
+        for (User u : userlist){
+                if(u.getRoles().getId()==1){
+                    userList.add(u);
+                }
+            }
         request.setAttribute("pl", userList);
         request.getRequestDispatcher("manageruser.jsp").forward(request, response);
     }
