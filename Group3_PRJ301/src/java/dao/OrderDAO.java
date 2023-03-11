@@ -158,4 +158,16 @@ public class OrderDAO extends DBContext {
         return 0;
     }
 
+     public void addCartItem(int uid, String pid, int quanlity){
+        String sql ="Update [Cart] set quantity = ? where [uid] = ? and [pid] = ?";
+        try {
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ps.setInt(1, quanlity);
+            ps.setInt(2, uid);
+            ps.setString(3, pid);
+            ps.executeUpdate();
+        } catch (Exception e) {
+        }
+    }
+
 }

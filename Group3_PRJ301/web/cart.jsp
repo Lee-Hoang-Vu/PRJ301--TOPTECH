@@ -62,7 +62,7 @@
                                                         <figure><img width="113" height="113" src="${cart.getProduct().getImg()}" alt="shipping cart"></figure>
                                                     </a>
                                                 </td>
-                                                
+
                                                 <td class="product-price" data-title="Price">
                                                     <div class="price price-contain">
                                                         <ins><span class="price-amount"><span class="currencySymbol">$</span>${cart.getProduct().getPrice()}</span></ins>
@@ -70,9 +70,16 @@
                                                 </td>
                                                 <td class="product-quantity" data-title="Quantity">
                                                     <div class="quantity-box type1">
-                                                        <div class="qty-input">
-                                                            <input type="text" name="qty12554" value="${cart.getQuantity()}">
-                                                        </div>
+                                                        <td class="product-quantity" data-title="Quantity">
+                                                            <div class="quantity-box type1">         
+                                                                <form action = "./CaculateCart?pid=${cart.getProduct().getId()}">
+                                                                    <button name="act" type="submit" value="minus">-</button> 
+                                                                    <input type="text" name="qty12554" value="${cart.getQuantity()}">
+                                                                    <input type="hidden" name="pid" value ="${cart.getProduct().getId()}">
+                                                                    <button name="act" type="submit" value="add">+</button> 
+                                                                </form>
+
+                                                            </div>
                                                     </div>
                                                 </td>
                                                 <td class="product-subtotal" data-title="Total">
