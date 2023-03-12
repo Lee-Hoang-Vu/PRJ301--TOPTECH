@@ -45,7 +45,7 @@ public class CaculateCart extends HttpServlet{
             switch(request.getParameter("act")){
                 case "minus":
                     if(quanlity == 1) {
-                    odao.deleteCartItem(u.getId(), productId);
+                    break;
                     }
                     if(quanlity > 0){
                         quanlity--;
