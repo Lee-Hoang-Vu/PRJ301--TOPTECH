@@ -37,10 +37,10 @@ public class VerifyEmail extends HttpServlet{
         
         if(verifyCode.equals(Code)){
             req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("afterVerify.jsp").forward(req, resp);
+            req.getRequestDispatcher("./login").forward(req, resp);
         }else{
             req.setAttribute("alertTitle", "Sorry!");
-            req.getRequestDispatcher("afterVerify.jsp").forward(req, resp);
+            req.getRequestDispatcher("Verify.jsp").forward(req, resp);
         }
     }
     
