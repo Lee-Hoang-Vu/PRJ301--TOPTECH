@@ -78,7 +78,9 @@ public class RegisterController extends HttpServlet {
                 User u = new User(name, email, pass, address, phone, new Roles(1));
 //                SendMail sm = new SendMail();
 //                sm.send(email, "New Register", "Welcome to ours system!");
-                response.sendRedirect("./login");
+                HttpSession session = request.getSession();
+                session.setAttribute("email", email);
+                response.sendRedirect("./sendMail");
             } else {
                 request.setAttribute("messregis", "Email already exist in system!");
                 request.getRequestDispatcher("register.jsp").forward(request, response);

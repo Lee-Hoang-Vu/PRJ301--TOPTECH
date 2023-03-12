@@ -6,7 +6,7 @@ package controller;
 
 /**
  *
- * @author Khangnekk
+ * @author Sio
  */
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -19,12 +19,14 @@ import java.util.Random;
 import javax.mail.*;
 import javax.mail.internet.*;
 
+
 public class SendMail extends HttpServlet {
 
+    
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-// Get recipient email address and message from form data
+        // Get recipient email address and message from form data
         String recipient = request.getParameter("recipient");
         String verifyCode = getRandomNumberString();
         String message = messageProcess(verifyCode);
@@ -35,8 +37,8 @@ public class SendMail extends HttpServlet {
 
         // Set up mail server and authentication
         String host = "smtp.gmail.com";
-        String user = "thegalaxy2308@gmail.com";
-        String password = "ollvprlecgkrgzbf";
+        String user = "toptech8868@gmail.com";
+        String password = "kwtlqinytpukcwns";
 
         // Create properties object for the mail session
         Properties props = new Properties();
@@ -58,7 +60,7 @@ public class SendMail extends HttpServlet {
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(user));
             msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            msg.setSubject("Upgrade to a premium account");
+            msg.setSubject("Verify your email");
             msg.setText(message);
 
             // Send message
@@ -81,7 +83,6 @@ public class SendMail extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req, resp);
         req.getRequestDispatcher("EnterMail.jsp").forward(req, resp);
     }
 
@@ -106,8 +107,9 @@ public class SendMail extends HttpServlet {
      */
     public static String messageProcess(String verifyCode) {
         String message = "Hello,\n"
-                + "You have sign uo successfully\n"
-                + "Welcome to TOPTECH Official " + verifyCode;
+                + "Thank you for upgrading your account to a premium account\n"
+                + "Your verification code is: " + verifyCode;
+
         return message;
     }
 }
