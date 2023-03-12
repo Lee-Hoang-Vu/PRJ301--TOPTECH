@@ -12,8 +12,9 @@
         <title>Verify</title>
     </head>
     <body>
-        <div style="text-align: center; font-family: tahoma; margin-top: 10em; font-size: 30px;">
-            <form action="verify" method="POST">
+        <!--<div style="text-align: center; font-family: tahoma; margin-top: 10em; font-size: 30px;">-->
+        <div  font-family: inherit;margin-top: auto; font-size: 30px;">
+            <form action="verifyEmail" method="POST">
                 <label>Enter your code here</label><br>
                 <input type="text" style="height: 20px; width: 200px" name="verifyCode"><br>
                 <p style="font-size: 15px; color: red">Code is valid for 1 minute</p>

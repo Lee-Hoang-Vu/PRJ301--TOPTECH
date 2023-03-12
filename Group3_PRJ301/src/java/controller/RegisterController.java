@@ -76,10 +76,7 @@ public class RegisterController extends HttpServlet {
             if (checkExist == null) {
                 udao.inserUser(name, email, phone, address, pass, Integer.valueOf(gender));
                 User u = new User(name, email, pass, address, phone, new Roles(1));
-//                SendMail sm = new SendMail();
-//                sm.send(email, "New Register", "Welcome to ours system!");
-                HttpSession session = request.getSession();
-                session.setAttribute("email", email);
+                request.getSession().setAttribute("newuser", u);
                 response.sendRedirect("./sendMail");
             } else {
                 request.setAttribute("messregis", "Email already exist in system!");
