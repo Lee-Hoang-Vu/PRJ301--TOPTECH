@@ -40,92 +40,80 @@
         <div class="wrapper">
             <div id="content">
                 <jsp:include page="header1.jsp"/>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="title">
+                            <h2> VIEW CART</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="brand"  class="brand-bg"　
+                     style="box-shadow: #ddd 0px 0px 19px 8px;
+                     width: 80%;
+                     margin-left: 140px;">
+                    <div style="justify-content: center;" class="row">
+                        <div>
+                            <div class="shoppingcart">
+                                <table style="text-align: center" class="shoptable" border="1px">
+                                    <thead class="head">
+                                        <tr>
+                                            <th style="font-size: 26px; color: wheat">Product Name</th>
+                                            <th style="font-size: 26px; color: wheat">Product Img</th>
+                                            <th style="font-size: 26px; color: wheat">Price</th>
+                                            <th style="font-size: 26px; color: wheat">Quantity</th>
+                                            <th style="font-size: 26px; color: wheat">Total</th>
+                                            <th style="font-size: 26px; color: wheat">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="tbody">
+                                        <c:forEach var="cart" items="${cl}">
+                                            <tr class="cart_item">
+                                                <td >
+                                                    <a style="font-size: 22px" href="#">${cart.getProduct().getName()}</a>
+                                                </td>
+                                                <td class="Product Name" data-title="Product Name">
+                                                    <a href="#">
+                                                        <figure><img width="113" height="113" src="${cart.getProduct().getImg()}" alt="shipping cart"></figure>
+                                                    </a>
+                                                </td>
 
-                <div style="background-color: white" class="Categories">
-                    <div class="container" style="width: 80%">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="title">
+                                                <td class="product-price" data-title="Price">
+                                                    <div class="price price-contain">
+                                                        <ins><span style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()}</span></ins>
+                                                    </div>
+                                                </td>
+                                                <td class="" data-title="Quantity">
+                                                    <div class="">
+                                                        <div class="">
+                                                            <input type="text" name="qty12554" value="${cart.getQuantity()}">
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td class="product-subtotal" data-title="Total">
+                                                    <div class="price price-contain">
+                                                        <ins><span  style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()*cart.getQuantity()}</span></ins>
+                                                    </div>
+                                                </td>
+                                                <td class="" data-title="Total">
+                                                    <div class="">
+                                                        <a href="./DeleteCartItem?pid=${cart.getProduct().getId()}"style="color: red; font-size: 40px;" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </c:forEach>
 
-                                    <h2> VIEW CART</h2>
-                                </div>
+                                        <tr class="check">
+                                            <td class="" colspan="2">
+                                                <a class="cart" href="./HomePage">Back to Shop</a>
+                                            </td>
+                                            <td class="" colspan="6">
+                                                <a class="cart" href="./Checkout">Check Out</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
-
-                        <!-- news brand -->
-                        <div id="brand"  class="brand-bg"　
-                             style="box-shadow: #ddd 0px 0px 19px 8px;
-                             margin-bottom: 29px;
-                             padding: 18px 73px;
-                             width: 80%;
-                             margin-left: 99px;">
-                            <div style="justify-content: center;" class="row">
-                                <div>
-                                    <div class="shoppingcart">
-                                        <table style="text-align: center" class="shoptable" border="1px">
-                                            <thead class="head">
-                                                <tr>
-                                                    <th style="font-size: 26px; color: wheat">Product Name</th>
-                                                    <th style="font-size: 26px; color: wheat">Product Img</th>
-                                                    <th style="font-size: 26px; color: wheat">Price</th>
-                                                    <th style="font-size: 26px; color: wheat">Quantity</th>
-                                                    <th style="font-size: 26px; color: wheat">Total</th>
-                                                    <th style="font-size: 26px; color: wheat">Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tbody">
-                                                <c:forEach var="cart" items="${cl}">
-                                                    <tr class="cart_item">
-                                                        <td >
-                                                            <a style="font-size: 22px" href="#">${cart.getProduct().getName()}</a>
-                                                        </td>
-                                                        <td class="Product Name" data-title="Product Name">
-                                                            <a href="#">
-                                                                <figure><img width="113" height="113" src="${cart.getProduct().getImg()}" alt="shipping cart"></figure>
-                                                            </a>
-                                                        </td>
-
-                                                        <td class="product-price" data-title="Price">
-                                                            <div class="price price-contain">
-                                                                <ins><span style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()}</span></ins>
-                                                            </div>
-                                                        </td>
-                                                        <td class="" data-title="Quantity">
-                                                            <div class="">
-                                                                <div class="">
-                                                                    <input type="text" name="qty12554" value="${cart.getQuantity()}">
-                                                                </div>
-                                                            </div>
-                                                        </td>
-                                                        <td class="product-subtotal" data-title="Total">
-                                                            <div class="price price-contain">
-                                                                <ins><span  style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()*cart.getQuantity()}</span></ins>
-                                                            </div>
-                                                        </td>
-                                                        <td class="" data-title="Total">
-                                                            <div class="">
-                                                                <a href="./DeleteCartItem?pid=${cart.getProduct().getId()}"style="color: red; font-size: 40px;" class="remove"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </c:forEach>
-
-                                                <tr class="check">
-                                                    <td class="" colspan="2">
-                                                        <a class="cart" href="./HomePage">Back to Shop</a>
-                                                    </td>
-                                                    <td class="" colspan="6">
-                                                        <a class="cart" href="./Checkout">Check Out</a>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
                     </div>
                 </div>
             </div>

@@ -45,17 +45,27 @@
 
                 <div style="background-color: white" class="container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12 title">
+                               <img style="width: 100%; border-radius: 0px;margin-top:-63px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
                             <div class="title">
                                 <form action="ProductList"  method="get">
-                                    <select name="categoryId" class="form-select" onchange="this.form.submit()" >
+                                    <select style="
+                                            background-color: black;
+                                            color: wheat;
+                                            margin-right: 56%;
+                                            height: 40px;
+                                            border-radius: 10px;" name="categoryId" class="form-select" onchange="this.form.submit()" >
                                         <option value="">All Category</option>
                                         <c:forEach var="c" items="${clist}">
                                             <option value="${c.getId()}" ${param['categoryId']==c.getId()?"selected":""}>${c.getName()}</option>
                                         </c:forEach>
                                     </select>
 
-                                    <select name="sort" class="form-select"  onchange="this.form.submit()">
+                                    <select style="
+                                            background-color: black;
+                                            color: wheat;
+                                            height: 40px;
+                                            border-radius: 10px;" name="sort" class="form-select"  onchange="this.form.submit()">
                                         <option value="0" ${param['sort']==0?"selected":""}>Sort Default</option>
                                         <option value="1" ${param['sort']==1?"selected":""}>Newest</option>
                                         <option value="2" ${param['sort']==2?"selected":""}>Price ascending</option>
@@ -66,7 +76,6 @@
                         </div>
                     </div>
 
-                    <!-- news brand -->
                     <div id="brand"  class="brand-bg">
                         <div class="row">
                             <div>
@@ -90,15 +99,13 @@
                         </div>
                     </div>
 
-                    <!-- end news brand -->
-
                     <div style="background-color: gray; display: flex; justify-content: center; box-shadow: #ddd 0px 0px 19px 8px; border-radius: 10px">
                         <ul class="pagination" >
-                            <li><a style="background: wheat;padding: 2px 12px 14px 14px;" href="ProductList?index=1&categoryId=${param['categoryId']}"><i class="fa fa-angle-left" class="page-link" aria-hidden="true"></i></a></li>
+                            <li><a style="background: wheat;padding: 3px 12px 14px 14px;" href="ProductList?index=1&categoryId=${param['categoryId']}"><i class="fa fa-angle-left" class="page-link" aria-hidden="true"></i></a></li>
                                     <c:forEach var = "i" begin = "1" end = "${numberPage}">
                                 <li class="${param['index']==i?'page-item active':'page-item'}"><a href="ProductList?index=${i}&categoryId=${param['categoryId']}"   class="page-link">${i}</a></li>
                                 </c:forEach>
-                            <li><a style="background: wheat;padding: 2px 12px 14px 2px;" href="ProductList?index=${numberPage}&categoryId=${param['categoryId']}"><i class="fa fa-angle-right" class="page-link" aria-hidden="true"></i></a></li>
+                            <li><a style="background: wheat;padding: 3px 12px 14px 2px;" href="ProductList?index=${numberPage}&categoryId=${param['categoryId']}"><i class="fa fa-angle-right" class="page-link" aria-hidden="true"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,6 +113,5 @@
             <jsp:include page="footer.jsp"/>
         </div>
         <div class="overlay"></div>
-
     </body>
 </html>

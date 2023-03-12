@@ -50,7 +50,8 @@
                                 <div class="full">
                                     <div class="center-desk">
                                         <div class="logo">
-                                            <img src="images/logo.png" alt="#">
+                                            <img style="    padding-bottom: 192px;
+                                                 margin-bottom: -194px;" src="images/logo.png" alt="#">
                                         </div>
                                     </div>
                                 </div>
@@ -90,10 +91,10 @@
                                             <li><a href="Logout"><i style="font-size: 25px" class='fa fa-sign-out'></i></a></li>
                                                 </c:if>
                                         </li>
-
+                                        
                                         <li class="menu_iconb">
                                             <c:if test="${sessionScope['account']==null}">
-                                            <li><a href="login">LOG IN</a></li>
+                                            <li ><a href="login">LOG IN</a></li>
                                             </c:if>  
                                         </li>
                                     </ul>

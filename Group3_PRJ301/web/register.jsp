@@ -62,6 +62,10 @@
                                     <label for="fid-pass">Password:<span style="color: red">*</span></label>
                                     <input type="password" id="fid-pass" name="pass" value="" class="txt-input">
                                 </div>
+                                <div class="input-form">
+                                    <label for="fid-pass">Confirm Password:<span style="color: red">*</span></label>
+                                    <input type="password" id="fid-pass" name="confirmpass" value="" class="txt-input">
+                                </div>
                                 <div style="width: 25%" class="input-form">
                                     <input type="text" id="submitLogin"
                                            placeholder="Captcha code" >
@@ -74,7 +78,7 @@
                                     font-weight: 400;
                                     font-weight: 400;
                                     margin: 0px 10px -8px;
-                                    padding: 15px;
+                                    padding: 5px;
                                     text-decoration: line-through;" id="image" class="inline" selectable="False">
                                 </span>
 
@@ -98,7 +102,6 @@
                                       margin: 0px 10px 0px;" >Check</span><br/><br/>
 
                                 <p id="key" style="color: red" ></p>
-
                                 <p class="form-row" style="color: red">
                                     ${messregis}
                                 </p>

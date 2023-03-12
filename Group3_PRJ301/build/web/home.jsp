@@ -33,18 +33,17 @@
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     </head>
-    <!-- body -->
 
     <body class="main-layout">
-
         <div class="wrapper">
             <div id="content">
-                <jsp:include page="header1.jsp"/>
+                <jsp:include page="header1.jsp"/>        
                 <!-- Categories -->
                 <div style="background-color: white" class="Categories">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
+                                <img style="width: 100%; border-radius: 0px;margin-top:16px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
                                 <div class="title">
                                     <form style="
                                           color: #555;
@@ -65,80 +64,73 @@
                                                color: inherit;
                                                border: 1px solid transparent;
                                                border-radius: 10px;
-                                               float: left; 
+                                               float: left;
                                                " type="text" name="search"  class="input-text" value="" placeholder="search product...">
                                         <i style="font-size: 25px; padding: 7px; float: right" class='fa fa-search'></i>
                                     </form> 
                                     <h2> Categories</h2>
                                     <ul class="categiri">
-                                        <li class="active"><a href="#">Phone</a></li>
-                                        <li><a href="#shoes">Latop</a></li>
-                                        <li><a href="#jewellery">IPAD</a></li>
-                                        <li><a href="#">Computer Screen</a></li>
-                                        <li><a href="#kids">Keyboard</a></li>
-                                        <li><a href="#">Mouse</a></li>
+                                        <li><a href="./categoryList?index=1">Phone</a></li>
+                                        <li><a href="laptopList">Laptop</a></li>
+                                        <li><a href="screenList">Computer Screen</a></li>
+                                        <li><a href="keyboardList">Keyboard</a></li>
+                                        <li><a href="mouseList">Mouse</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
 
+                        <!-- news brand -->
                         <div id="brand"  class="brand-bg">
                             <h3>New brands</h3>
                             <div class="row">
-                                <div>
-                                    <div class="places-list">
-                                        <c:forEach var="p" items="${plist}">
-                                            <div class="place-item"> 
-                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
-                                                    <img src="${p.getImg()}" alt="img">
-                                                </a>
-                                                <div class="place-body">
-                                                    <h4 class="place-heading"" href="./ProductDetails?pid=${p.getId()}" class="pr-name">${p.getName()}</a></h4>
-                                                    <div class="place-price">
-                                                        <ins><span>Price: <span class="currencySymbol">$</span>${p.getPrice()}</span></ins>
-                                                    </div>
-                                                    <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
-                                                </div>
+                                <div class="places-list">
+                                    <c:forEach var="p" items="${plist}">
+                                        <div class="place-item"> 
+                                            <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
+                                                <img src="${p.getImg()}" alt="img">
+                                            </a>
+                                            <div class="place-body">
+                                                <h4 class="place-heading"" href="./ProductDetails?pid=${p.getId()}" class="pr-name">${p.getName()}</a></h4>
+                                                <div class="place-price">
+                                                    <ins><span>Price: <span class="currencySymbol">$</span>${p.getPrice()}</span></ins>
+                                                </div>               
+                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
                                             </div>
-                                        </c:forEach>
-                                    </div>
+                                        </div>
+                                    </c:forEach>
                                 </div>
                             </div>
                         </div>
 
-                 
                         <div id="sh" class="sh">
                             <h3>Best Seller</h3>
                             <div class="row">
-                                <div>
-                                    <div class="places-list">
-                                        <c:forEach var="p" items="${plist1}">                              
-                                            <div class="place-item">
-                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
-                                                    <img src="${p.getImg()}" alt="img">
-                                                </a>
-                                                <div class="place-body">
-                                                    <h4 class="place-heading"><a href="./ProductDetails?pid=${p.getId()}"class="pr-name">${p.getName()}</a></h4>
-                                                    <div class="place-price">
-                                                        <ins><span>Price: <span class="currencySymbol">$</span >${p.getPrice()}</span></ins>
-                                                    </div>
-                                                    <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
+                                <div class="places-list">
+                                    <c:forEach var="p" items="${plist1}">                              
+                                        <div class="place-item">
+                                            <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
+                                                <img src="${p.getImg()}" alt="img">
+                                            </a>
+                                            <div class="place-body">
+                                                <h4 class="place-heading"><a href="./ProductDetails?pid=${p.getId()}"class="pr-name">${p.getName()}</a></h4>
+                                                <div class="place-price">
+                                                    <ins><span>Price: <span class="currencySymbol">$</span >${p.getPrice()}</span></ins>
                                                 </div>
+                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
                                             </div>
-                                        </c:forEach>                   
-                                    </div>
-                                </div>
+                                        </div>
+                                    </c:forEach>                   
+                                </div>       
                             </div>
                         </div>
                     </div>
-
                 </div>
-            </div>
+            </div>          
             <!--  footer -->
             <jsp:include page="footer.jsp"/>
             <!-- end footer -->
         </div>
         <div class="overlay"></div>
     </body>
-
 </html>

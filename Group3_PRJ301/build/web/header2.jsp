@@ -51,7 +51,8 @@
                                 <div class="full">
                                     <div class="center-desk">
                                         <div class="logo">
-                                            <img src="images/logo.png" alt="#">
+                                            <img style="    padding-bottom: 192px;
+                                                 margin-bottom: -194px;" src="images/logo.png" alt="#">
                                         </div>
                                     </div>
                                 </div>

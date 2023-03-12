@@ -44,7 +44,7 @@ html {
 }
 
 body {
-    color: gray; 
+    color: gray;
     font-size: 14px;
     font-family: 'poppins', sans-serif;
     line-height: 1.80857;
@@ -160,10 +160,9 @@ a,
 
 img {
     max-width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 30px;
-    
+    height: 230px;
+    margin: 0 16px;
+
 }
 
 :focus {
@@ -1537,10 +1536,7 @@ ul.categiri li {
     display: inline-block;
     padding: 0;
 }
-ul.categiri li.active a {
-    background: black;
-    color: #fff;
-}
+
 ul.categiri li a {
     padding: 10px 12px;
     font-weight: 500;
@@ -1551,11 +1547,10 @@ ul.categiri li a:hover {
     color: #fff;
 }
 
-
 /** Categories section **/
 .Categories {
     padding-top: 5px;
-    background: white; 
+    background: white;
 }
 
 .trending .trending-box h3 {
@@ -1576,22 +1571,22 @@ ul.categiri li a:hover {
 }
 
 .place-body{
-    background: black;
+     background: black;
     color: wheat;
-    margin-bottom: 11px;
     padding: 5px;
-    font-size: 15px;
     text-align: center;
-    border-bottom-left-radius: 30px;
+    border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    margin: 0px 33px 15px;
 }
 .place-heading{
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 16px;
+    font-weight: 500;
     color: wheat;
 }
+
 .place-price{
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     margin-top: -17px;
 }
@@ -1619,10 +1614,10 @@ ul.categiri li a:hover {
 .brand-bg  {
     margin-bottom: 29px;
     padding: 26px 67px;
-     border-color: rgba(227, 227, 227, 0.9); 
-     border-width: 5px; 
+    border-color: rgba(227, 227, 227, 0.9);
+    border-width: 5px;
     border: solid;
- 
+
 }
 .brand-bg h3 {
     font-size:26px;
@@ -1728,10 +1723,10 @@ tbody .check .cart:hover{
 
 /**  shoes section **/
 .sh  {
-/*    box-shadow: black -1px 3px 8px 9px;
-    margin-bottom: 29px;
-    padding: 40px 25px;
-    margin-top: 85px;*/
+    /*    box-shadow: black -1px 3px 8px 9px;
+        margin-bottom: 29px;
+        padding: 40px 25px;
+        margin-top: 85px;*/
     margin-bottom: 29px;
     padding: 26px 67px;
     border-color: rgba(227, 227, 227, 0.9);
@@ -1750,7 +1745,7 @@ tbody .check .cart:hover{
 /**  save section **/
 .save {
     margin-top: 45px;
-/*    background: url(../images/save_bg.jpg);*/
+    /*    background: url(../images/save_bg.jpg);*/
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -1766,7 +1761,7 @@ tbody .check .cart:hover{
 .save_box::before {
     position: absolute;
     content: "";
-/*    background: url(../images/crros.png);*/
+    /*    background: url(../images/crros.png);*/
     height: 430px;
     width: 225px;
     top: 0;
@@ -1929,18 +1924,12 @@ tbody .check .cart:hover{
     line-height: 22px;
 }
 
-/** end Kids section **/
-
-/** footer section **/
 
 .footer {
-/*    background: #23242a;
-    padding-top: 33px;
-    padding-bottom: 23px;*/
+
     background: #23242a;
-    padding-top: 33px;
-    margin-top: 15px;
-    margin-bottom: -48px;
+    padding-top: 2px;
+    margin-top: 12px;
 }
 
 .footer_top  {
@@ -1969,6 +1958,7 @@ ul.sociel li a {
     border-radius: 20px;
     font-size: 18px;
     border: #fff solid 1px;
+    margin-right: 49px;
 }
 
 

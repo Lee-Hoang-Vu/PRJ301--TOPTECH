@@ -1,97 +1,90 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- 
+    Document   : userprofile
+    Created on : Mar 2, 2023, 11:15:05 PM
+    Author     : asus
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
     <head>
+        <!-- basic -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- mobile metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Profile</title>
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/main-color.css">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- site metas -->
+        <title>SHOP</title>
 
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     </head>
+    <!-- body -->
 
-    <body class="biolife-body">
+    <body class="main-layout">
 
-        <jsp:include page="header1.jsp"/>
-
-
-        <div class="page-contain login-page">
-
-            <!-- Main content -->
-            <div id="main-content" class="main-content">
+        <div class="wrapper">
+            <div id="content">
+                <jsp:include page="header1.jsp"/>
+                <!-- Categories -->
                 <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-12">
-                            <h3 class="box-title" style="display: inline;">Your Account Profile</h3><br>
-                         
-                            <form method="post" action="Profile">
-                                <div  class="col-md-6">
-                                    <label class="" >Name</label><input class="form-control" type="text" value="${sessionScope['account'].getName()}" name="name">
-                                </div>
-                                <div  class="col-md-6">
-                                    <label class="" >Phone</label><input class="form-control" type="text" value="${sessionScope['account'].getPhone()}" name="phone">
-                                </div>
-                                <div  class="col-md-6">
-                                    <label class="" >Email</label><input class="form-control" type="text" value="${sessionScope['account'].getEmail()}" name="email">
-                                </div>
-                                <div  class="col-md-6">
-                                    <label class="" >Password</label><input class="form-control" type="password" value="${sessionScope['account'].getPassword()}" name="pass">
-                                </div>
-                                <div  class="col-md-6">
-                                    <label class="" >Gender</label><br>
+                    <h1 class="your">Your Account Profile</h1><br>
+                    <div class="ipform">
+                        <form method="post" action="Profile">
+                            <div  class="name">
+                                <label class="name1" >Name</label><input class="name2" type="text" value="${sessionScope['account'].getName()}" name="name">
+                            </div>
+                            <br/>
+                            <div  class="phone">
+                                <label class="phone1" >Phone</label><input class="phone2" type="text" value="${sessionScope['account'].getPhone()}" name="phone">
+                            </div>
+                            <br/>
+                            <div  class="email">
+                                <label class="email1" >Email</label><input class="email2" type="text" value="${sessionScope['account'].getEmail()}" name="email">
+                            </div>
+                            <br/>
+                            <div  class="gender">
+                                <label class="gender1" >Gender</label>
+                                <label class="gender2"> 
                                     <input type="radio" name="gender" value="1"  ${sessionScope['account'].getGender()?"Checked":""}> Male  
                                     <input type="radio" name="gender" value="0"  ${!sessionScope['account'].getGender()?"Checked":""}> Female
-                                </div>
-                                <div  class="col-md-12">
-                                    <label class="" >Address</label><input class="form-control" type="text" value="${sessionScope['account'].getAddress()}" name="address">
-                                </div>
-                                <div  class="col-md-12" style="padding: 2px;">           
-                                    <input value="${sessionScope['account'].getId()}" name="id" type="hidden">
-                                </div>
-                                <div  class="col-md-12" style="padding: 2px;">           
-                                    <p style="color: green;">${mess}</p>
-                                </div>
-                                <div  class="col-md-12">
-                                    <input class="btn btn-primary" type="submit" value="Edit" >
-                                </div>
-                            </form>
-                        </div>
-
+                                </label>
+                            </div>
+                            <br/>
+                            <div  class="address">
+                                <label class="address1" >Address</label><input class="address2" type="text" value="${sessionScope['account'].getAddress()}" name="address">
+                            </div>
+                            <a href="Changepassword.jsp" class="change">Change password</a>
+                            <div  class="" style="padding: 2px;">           
+                                <input value="${sessionScope['account'].getId()}" name="id" type="hidden">
+                            </div>
+                            <div  class="" style="padding: 2px;">           
+                                <p style="color: green;">${mess}</p>
+                            </div>                
+                            <input class="edit" type="submit" value="Edit" >             
+                        </form>
                     </div>
-
                 </div>
-
             </div>
-
+            <jsp:include page="footer.jsp"/>
+            <!-- end footer -->
         </div>
 
-        <jsp:include page="footer.jsp"/>
-
-        <!-- Scroll Top Button -->
-        <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
-
-        <script src="assets/js/jquery-3.4.1.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.min.js"></script>
-        <script src="assets/js/slick.min.js"></script>
-        <script src="assets/js/biolife.framework.js"></script>
-        <script src="assets/js/functions.js"></script>
+        <div class="overlay"></div>
     </body>
-
 </html>
