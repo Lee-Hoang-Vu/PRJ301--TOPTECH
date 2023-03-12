@@ -53,7 +53,6 @@
                                           border-radius: 16px;
                                           width: 30%;
                                           float: right;
-
                                           " action="ProductList?index=1" name="desktop-seacrh" method="get">
                                         <input style="
                                                border: none;

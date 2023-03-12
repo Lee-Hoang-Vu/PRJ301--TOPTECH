@@ -11,7 +11,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
-import model.Category;
 import model.Product;
 /**
  *
@@ -33,10 +32,8 @@ public class categoryList extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ProductDAO dao = new ProductDAO(); 
         String id = request.getParameter("index"); 
-        ArrayList<Product> p = dao.getAllProduct("1", ""); 
-        boolean a = id instanceof String; 
-        request.setAttribute("a", a);
-        request.setAttribute("P", p);
+        ArrayList<Product> list = dao.getAllProduct(id, ""); 
+        request.setAttribute("p", list);
         request.getRequestDispatcher("category.jsp").forward(request, response);     
     }
 
@@ -78,12 +75,5 @@ public class categoryList extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-    
-//    public static void main(String[] args) {
-//        ProductDAO dao = new ProductDAO(); 
-//        ArrayList<Product> list = dao.getAllProduct("1", ""); 
-//        
-//    }
- 
 
 }

@@ -45,7 +45,7 @@
 
                     <div class="container-fluid">
 
-                        <div class="row">
+                        <div style="margin-right: -207px" class="row">
                             <div class="col-lg-1 logo_section">
                                 <div class="full">
                                     <div class="center-desk">

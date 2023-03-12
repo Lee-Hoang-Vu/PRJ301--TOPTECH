@@ -78,27 +78,24 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
-                        
-                        
-                        ${a}
+                        </div>                       
+                       
                         <!-- news brand -->
                         <div id="brand"  class="brand-bg">
                             <h3>Phone</h3>
                             <div class="row">
                                 <div class="places-list">
-                                    <c:forEach var="s" items="${p}">
-                                        ${s.size()}
+                                    <c:forEach var="t" items="${p}">
                                         <div class="place-item"> 
-                                            <a href="./ProductDetails?pid=${s.getId()}" class="place-img">
-                                                <img src="${s.getImg()}" alt="img">
+                                            <a href="./ProductDetails?pid=${t.getId()}" class="place-img">
+                                                <img src="${t.getImg()}" alt="img">
                                             </a>
                                             <div class="place-body">
-                                                <h4 class="place-heading"" href="./ProductDetails?pid=${s.getId()}" class="pr-name">${s.getName()}</a></h4>
+                                                <h4 class="place-heading"" href="./ProductDetails?pid=${t.getId()}" class="pr-name">${t.getName()}</a></h4>
                                                 <div class="place-price">
-                                                    <ins><span>Price: <span class="currencySymbol">$</span>${s.getPrice()}</span></ins>
+                                                    <ins><span>Price: <span class="currencySymbol">$</span>${t.getPrice()}</span></ins>
                                                 </div>               
-                                                <a href="./ProductDetails?pid=${s.getId()}" class="place-buy">ORDER</a>
+                                                <a href="./ProductDetails?pid=${t.getId()}" class="place-buy">ORDER</a>
                                             </div>
                                         </div>
                                     </c:forEach>
