@@ -78,6 +78,7 @@ public class RegisterController extends HttpServlet {
                 User u = new User(name, email, pass, address, phone, new Roles(1));
 //                SendMail sm = new SendMail();
 //                sm.send(email, "New Register", "Welcome to ours system!");
+// quy ngo
                 response.sendRedirect("./login");
             } else {
                 request.setAttribute("messregis", "Email already exist in system!");
