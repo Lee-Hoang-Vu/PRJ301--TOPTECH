@@ -24,7 +24,7 @@ public class VerifyEmail extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
+       this.doPost(req, resp);
     }
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
