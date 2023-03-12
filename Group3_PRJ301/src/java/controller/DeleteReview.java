@@ -34,6 +34,7 @@ public class DeleteReview extends HttpServlet {
         
         response.sendRedirect("ManagerReview");
     }
+    //trhuyg5 oy5 oi5gvtjyg5uygr4uygciu
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -73,5 +74,5 @@ public class DeleteReview extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
+//roibgy b ygibyi b
 }
