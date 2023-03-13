@@ -118,6 +118,10 @@
         <servlet-class>controller.DeleteUser</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>VerifyEmail</servlet-name>
+        <servlet-class>controller.VerifyEmail</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>CategoryList</servlet-name>
         <servlet-class>controller.CategoryList</servlet-class>
     </servlet>
@@ -144,6 +148,10 @@
     <servlet>
         <servlet-name>categoryList</servlet-name>
         <servlet-class>controller.categoryList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>controller.SendMail</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -234,6 +242,10 @@
         <url-pattern>/DeleteUser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
+        <servlet-name>VerifyEmail</servlet-name>
+        <url-pattern>/verifyEmail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
         <servlet-name>CategoryList</servlet-name>
         <url-pattern>/CategoryList</url-pattern>
     </servlet-mapping>
@@ -260,6 +272,10 @@
     <servlet-mapping>
         <servlet-name>categoryList</servlet-name>
         <url-pattern>/categoryList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/sendMail</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

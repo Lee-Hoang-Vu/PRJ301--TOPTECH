@@ -130,6 +130,7 @@ public class SendMail extends HttpServlet {
 
             // Redirect to success page
             request.getRequestDispatcher("Verify.jsp").forward(request, response);
+//response.getWriter().print("success");
         } catch (MessagingException e) {
             // Redirect to error page
             response.getWriter().print("error..get");
