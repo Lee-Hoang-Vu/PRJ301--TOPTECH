@@ -39,7 +39,7 @@ public class VerifyEmail extends HttpServlet{
             req.setAttribute("alertTitle", "Thank you!");
             req.getRequestDispatcher("./login").forward(req, resp);
         }else{
-            req.setAttribute("alertTitle", "The verify code is wrong, please emter again!");
+            req.setAttribute("alertTitle", "The verify code is wrong, please enter again!");
             req.getRequestDispatcher("Verify.jsp").forward(req, resp);
         }
     }

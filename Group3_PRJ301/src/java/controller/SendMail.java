@@ -20,15 +20,12 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import model.User;
 
-
 public class SendMail extends HttpServlet {
 
-    
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         // Get recipient email address and message from form data
-//        String recipient = request.getParameter("recipient");
         User u = (User) request.getSession().getAttribute("newuser");
         String recipient = u.getEmail();
         String verifyCode = getRandomNumberString();
@@ -40,11 +37,10 @@ public class SendMail extends HttpServlet {
 
         // Set up mail server and authentication
         String host = "smtp.gmail.com";
-//        String user = "toptech8868@gmail.com";
-//        String password = "kwtlqinytpukcwns";
-        String user = "thegalaxy2308@gmail.com";
-        String password = "ollvprlecgkrgzbf";
-
+//        String user = "thegalaxy2308@gmail.com";
+//        String password = "ollvprlecgkrgzbf";
+        String user = "toptech8868@gmail.com";
+        String password = "kwtlqinytpukcwns";
 
         // Create properties object for the mail session
         Properties props = new Properties();
@@ -54,7 +50,7 @@ public class SendMail extends HttpServlet {
         props.put("mail.smtp.port", "587");
 
         // Create mail session and authenticate with credentials
-        Session session1 = Session.getInstance(props, new Authenticator() {
+        Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(user, password);
@@ -63,20 +59,20 @@ public class SendMail extends HttpServlet {
 
         try {
             // Create message and set recipient, subject, and message body
-            Message msg = new MimeMessage(session1);
+            Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(user));
             msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            msg.setSubject("Verify your email");
+            msg.setSubject("Upgrade to a premium account");
             msg.setText(message);
 
             // Send message
-            javax.mail.Transport.send(msg);
+            Transport.send(msg);
 
             // Redirect to success page
             request.getRequestDispatcher("Verify.jsp").forward(request, response);
         } catch (MessagingException e) {
             // Redirect to error page
-            response.getWriter().print("error");
+            response.getWriter().print("error..get");
         }
     }
 
@@ -89,10 +85,7 @@ public class SendMail extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        //        req.getRequestDispatcher("EnterMail.jsp").forward(req, resp);
-//        this.doPost(req, resp);
-// Get recipient email address and message from form data
-//        String recipient = request.getParameter("recipient");
+        // Get recipient email address and message from form data
         User u = (User) request.getSession().getAttribute("newuser");
         String recipient = u.getEmail();
         String verifyCode = getRandomNumberString();
@@ -104,11 +97,10 @@ public class SendMail extends HttpServlet {
 
         // Set up mail server and authentication
         String host = "smtp.gmail.com";
-//        String user = "toptech8868@gmail.com";
-//        String password = "kwtlqinytpukcwns";
-        String user = "thegalaxy2308@gmail.com";
-        String password = "ollvprlecgkrgzbf";
-
+//        String user = "thegalaxy2308@gmail.com";
+//        String password = "ollvprlecgkrgzbf";
+        String user = "toptech8868@gmail.com";
+        String password = "kwtlqinytpukcwns";
 
         // Create properties object for the mail session
         Properties props = new Properties();
@@ -118,7 +110,7 @@ public class SendMail extends HttpServlet {
         props.put("mail.smtp.port", "587");
 
         // Create mail session and authenticate with credentials
-        Session session1 = Session.getInstance(props, new Authenticator() {
+        Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(user, password);
@@ -127,20 +119,20 @@ public class SendMail extends HttpServlet {
 
         try {
             // Create message and set recipient, subject, and message body
-            Message msg = new MimeMessage(session1);
+            Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(user));
             msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
-            msg.setSubject("Verify your email");
+            msg.setSubject("Upgrade to a premium account");
             msg.setText(message);
 
             // Send message
-            javax.mail.Transport.send(msg);
+            Transport.send(msg);
 
             // Redirect to success page
             request.getRequestDispatcher("Verify.jsp").forward(request, response);
         } catch (MessagingException e) {
             // Redirect to error page
-            response.getWriter().print("error");
+            response.getWriter().print("error..get");
         }
     }
 
@@ -165,7 +157,7 @@ public class SendMail extends HttpServlet {
      */
     public static String messageProcess(String verifyCode) {
         String message = "Hello,\n"
-                + "Thank you for upgrading your account to a premium account\n"
+                + "We really thank you for taking time to help us verify your email.\n"
                 + "Your verification code is: " + verifyCode;
 
         return message;
