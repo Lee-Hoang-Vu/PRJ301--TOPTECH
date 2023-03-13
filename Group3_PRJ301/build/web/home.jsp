@@ -70,10 +70,10 @@
                                     <h2> Categories</h2>
                                     <ul class="categiri">
                                         <li><a href="./categoryList?index=1">Phone</a></li>
-                                        <li><a href="laptopList">Laptop</a></li>
-                                        <li><a href="screenList">Computer Screen</a></li>
-                                        <li><a href="keyboardList">Keyboard</a></li>
-                                        <li><a href="mouseList">Mouse</a></li>
+                                        <li><a href="./categoryList?index=2">Laptop</a></li>
+                                        <li><a href="./categoryList?index=3">Computer Screen</a></li>
+                                        <li><a href="./categoryList?index=4">Keyboard</a></li>
+                                        <li><a href="./categoryList?index=5">Mouse</a></li>
                                     </ul>
                                 </div>
                             </div>

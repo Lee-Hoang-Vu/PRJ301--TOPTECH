@@ -32,6 +32,7 @@ public class categoryList extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         ProductDAO dao = new ProductDAO(); 
         String id = request.getParameter("index"); 
+        request.setAttribute("id", id);
         ArrayList<Product> list = dao.getAllProduct(id, ""); 
         request.setAttribute("p", list);
         request.getRequestDispatcher("category.jsp").forward(request, response);     

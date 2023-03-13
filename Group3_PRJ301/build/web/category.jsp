@@ -71,18 +71,32 @@
                                     <h2> Categories</h2>
                                     <ul class="categiri">
                                         <li><a href="./categoryList?index=1">Phone</a></li>
-                                        <li><a href="laptopList">Laptop</a></li>
-                                        <li><a href="screenList">Computer Screen</a></li>
-                                        <li><a href="keyboardList">Keyboard</a></li>
-                                        <li><a href="mouseList">Mouse</a></li>
+                                        <li><a href="./categoryList?index=2">Laptop</a></li>
+                                        <li><a href="./categoryList?index=3">Computer Screen</a></li>
+                                        <li><a href="./categoryList?index=4">Keyboard</a></li>
+                                        <li><a href="./categoryList?index=5">Mouse</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>                       
-                       
+
                         <!-- news brand -->
                         <div id="brand"  class="brand-bg">
-                            <h3>Phone</h3>
+                            <c:if test="${id == 1}">    
+                                <h3>Phone</h3>
+                            </c:if>
+                            <c:if test="${id == 2}">    
+                                <h3>Laptop</h3>
+                            </c:if>
+                            <c:if test="${id == 3}">    
+                                <h3>Computer Screen</h3>
+                            </c:if>
+                            <c:if test="${id == 4}">    
+                                <h3>Keyboard</h3>
+                            </c:if>
+                            <c:if test="${id == 5}">    
+                                <h3>Mouse</h3>
+                            </c:if>
                             <div class="row">
                                 <div class="places-list">
                                     <c:forEach var="t" items="${p}">
