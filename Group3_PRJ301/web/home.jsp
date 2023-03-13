@@ -78,6 +78,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- news brand -->
                         <div id="brand"  class="brand-bg">
                             <h3>New brands</h3>
