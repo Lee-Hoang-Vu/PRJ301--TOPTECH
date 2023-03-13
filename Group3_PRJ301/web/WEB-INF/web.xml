@@ -118,6 +118,14 @@
         <servlet-class>controller.DeleteUser</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>SendMail</servlet-name>
+        <servlet-class>controller.SendMail</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>VerifyEmail</servlet-name>
+        <servlet-class>controller.VerifyEmail</servlet-class>
+            </servlet>
+    <servlet>
         <servlet-name>CategoryList</servlet-name>
         <servlet-class>controller.CategoryList</servlet-class>
     </servlet>
@@ -232,6 +240,14 @@
     <servlet-mapping>
         <servlet-name>DeleteUser</servlet-name>
         <url-pattern>/DeleteUser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SendMail</servlet-name>
+        <url-pattern>/sendMail</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>VerifyEmail</servlet-name>
+        <url-pattern>/verifyEmail</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CategoryList</servlet-name>

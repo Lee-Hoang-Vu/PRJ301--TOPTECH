@@ -20,7 +20,6 @@ import model.User;
  * @author Admin
  */
 public class RegisterController extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -80,10 +79,17 @@ public class RegisterController extends HttpServlet {
             }else{
             if (checkExist == null) {
                 udao.inserUser(name, email, phone, address, pass, Integer.valueOf(gender));
-                User u = new User(name, email, pass, address, phone, new Roles(1));
-//                SendMail sm = new SendMail();
-//                sm.send(email, "New Register", "Welcome to ours system!");
-                response.sendRedirect("./login");
+//                User u = new User(name, email, pass, address, phone, new Roles(1));
+                User u = new User();
+                u.setName(name);
+                u.setEmail(email);
+                u.setPhone(phone);
+                u.setAddress(address);
+                u.setPassword(pass);
+                u.setRoles( new Roles(1));
+                u.setGender(Boolean.parseBoolean(gender));
+                request.getSession().setAttribute("newuser", u);
+                response.sendRedirect("./sendMail");
             } else {
                 request.setAttribute("messregis", "Email already exist in system!");
                 request.getRequestDispatcher("register.jsp").forward(request, response);

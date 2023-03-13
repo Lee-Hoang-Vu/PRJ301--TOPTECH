@@ -24,7 +24,7 @@ public class VerifyEmail extends HttpServlet{
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
+       this.doPost(req, resp);
     }
     
     void processRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -37,10 +37,10 @@ public class VerifyEmail extends HttpServlet{
         
         if(verifyCode.equals(Code)){
             req.setAttribute("alertTitle", "Thank you!");
-            req.getRequestDispatcher("afterVerify.jsp").forward(req, resp);
+            req.getRequestDispatcher("./login").forward(req, resp);
         }else{
-            req.setAttribute("alertTitle", "Sorry!");
-            req.getRequestDispatcher("afterVerify.jsp").forward(req, resp);
+            req.setAttribute("alertTitle", "The verify code is wrong, please enter again!");
+            req.getRequestDispatcher("Verify.jsp").forward(req, resp);
         }
     }
     
