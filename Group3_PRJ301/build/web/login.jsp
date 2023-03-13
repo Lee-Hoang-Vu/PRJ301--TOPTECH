@@ -31,7 +31,6 @@
         <div class="wrapper">
             <div id="content">
                 <jsp:include page="header2.jsp"/>
-
                 <section>
                     <div class="noi-dung">
                         <div class="form">
@@ -45,7 +44,6 @@
                                     <label for="fid-pass">Password:<span style="color: red">*</span></label>
                                     <input type="password" id="fid-pass" name="pass" value="" class="txt-input">
                                 </div>
-
                                 <p style="color: red;">${mess}</p>
                                 <div class="input-form">
                                     <button class="btn btn-submit"  id="btnLogin" type="submit">LOGIN</button>

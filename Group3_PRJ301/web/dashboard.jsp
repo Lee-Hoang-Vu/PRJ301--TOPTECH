@@ -53,7 +53,7 @@
                                             <div class="center-desk">
                                                 <div class="logo">
                                                     <img style="    padding-bottom: 192px;
-                                                 margin-bottom: -194px;"  src="images/logo.png" alt="#">
+                                                         margin-bottom: -194px;"  src="images/logo.png" alt="#">
                                                 </div>
                                             </div>
                                         </div>
@@ -78,28 +78,28 @@
                         </div>     
                     </div>
                 </header>
-                
+
                 <section style="padding-top: 59px; padding-left: 80px; padding-bottom: 209px">
-                <table>
-                    <tr> 
-                        <td colspan="3"><h1 style="font-weight: 500; text-align: center">DASH BOARD</h1> </td>  
-                    </tr>
-                    <tr> 
-                        <td> <div class="col-md-3">
-                                <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Product: ${nump}</button>
-                            </div> </td>  
-                        <td>  
-                            <div class="col-md-3">
-                                <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Order: ${numo}</button>
-                            </div> </td>  
-                        <td>     <div class="col-md-3">
-                                <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Customer: ${numu}</button>
-                            </div></td>  
-                        <td>   <div class="col-md-3">
-                                <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Profit : ${profit}$</button>
-                            </div> </td>  
-                    </tr>
-                </table>
+                    <table>
+                        <tr> 
+                            <td colspan="3"><h1 style="font-weight: 500; text-align: center">DASH BOARD</h1> </td>  
+                        </tr>
+                        <tr> 
+                            <td> <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Product: ${nump}</button>
+                                </div> </td>  
+                            <td>  
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Order: ${numo}</button>
+                                </div> </td>  
+                            <td>     <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Customer: ${numu}</button>
+                                </div></td>  
+                            <td>   <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Profit : ${profit}$</button>
+                                </div> </td>  
+                        </tr>
+                    </table>
                 </section>
                 <jsp:include page="footer.jsp"/>
             </div>

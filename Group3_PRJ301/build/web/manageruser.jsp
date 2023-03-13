@@ -115,9 +115,7 @@
                 <jsp:include page="footer.jsp"/>
             </div>
         </div>         
-
         <!-- end footer -->
-
         <div class="overlay"></div>
     </body>
 </html>

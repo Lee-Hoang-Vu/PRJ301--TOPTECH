@@ -148,7 +148,6 @@
                                         uniquechar += randomchar.charAt(
                                                 Math.random() * randomchar.length)
                                     }
-
                                     // Store generated input
                                     captcha.innerHTML = uniquechar;
                                 }
