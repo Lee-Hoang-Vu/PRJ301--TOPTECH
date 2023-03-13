@@ -1,133 +1,112 @@
+<%-- 
+    Document   : login
+    Created on : Mar 1, 2023, 11:49:46 PM
+    Author     : asus
+--%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Shop</title>
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/main-color.css">
-        <style>
-
-            .inline{
-                display:inline-block;
-            }
-        </style>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/login.css">
     </head>
-
-    <body class="biolife-body" onload="generate()">
-
-        <jsp:include page="header2.jsp"/>
-
-
-        <div class="page-contain login-page">
-
-            <!-- Main content -->
-            <div id="main-content" class="main-content">
-                <div class="container">
-
-                    <div class="row">
-
-                        <!--Form Sign In-->
-                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                            <div class="signin-container">
-                                <h1>Login</h1>
-                                <form action="./login" name="frm-login" method="post">
-                                    <p class="form-row">
-                                        <label for="fid-name">Email<span class="requite">*</span></label>
-                                        <input type="email" id="fid-name" name="email" value="" class="txt-input">
-                                    </p>
-                                    <p class="form-row">
-                                        <label for="fid-pass">Password:<span class="requite">*</span></label>
-                                        <input type="password" id="fid-pass" name="pass" value="" class="txt-input">
-                                    </p>
-                                    <p style="color: red;">${mess}</p>
-                                    <p class="form-row wrap-btn">
-                                        <button class="btn btn-submit "  id="btnLogin" type="submit">login</button>
-                                    </p>
-                                </form>
-                            </div>
+    <body class="main-layout">
+        <div class="wrapper">
+            <div id="content">
+                <jsp:include page="header2.jsp"/>
+                <section>
+                    <div class="noi-dung">
+                        <div class="form">
+                            <h2>LOGIN</h2>
+                            <form action="./login" name="frm-login" method="post">
+                                <div class="input-form">
+                                    <label for="fid-name">Email<span style="color: red">*</span></label>
+                                    <input type="email" id="fid-name" name="email" value="" class="txt-input">
+                                </div>
+                                <div class="input-form">
+                                    <label for="fid-pass">Password:<span style="color: red">*</span></label>
+                                    <input type="password" id="fid-pass" name="pass" value="" class="txt-input">
+                                </div>
+                                <p style="color: red;">${mess}</p>
+                                <div class="input-form">
+                                    <button class="btn btn-submit"  id="btnLogin" type="submit">LOGIN</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
-                </div>
-
+                </section>
             </div>
-
+            <jsp:include page="footer.jsp"/>
         </div>
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/biolife.framework.js"></script>
+        <script src="js/functions.js"></script>
+        <script>
+                                var captcha;
+                                function generate() {
 
-    </div>
-    <br/><br/><br/><br/><br/>
-    <jsp:include page="footer.jsp"/>
+                                    // Clear old input
+                                    document.getElementById("submitLogin").value = "";
 
-    <!-- Scroll Top Button -->
-    <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
+                                    // Access the element to store
+                                    // the generated captcha
+                                    captcha = document.getElementById("image");
+                                    var uniquechar = "";
 
-    <script src="assets/js/jquery-3.4.1.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.countdown.min.js"></script>
-    <script src="assets/js/jquery.nice-select.min.js"></script>
-    <script src="assets/js/jquery.nicescroll.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
-    <script src="assets/js/biolife.framework.js"></script>
-    <script src="assets/js/functions.js"></script>
-    <script>
-    var captcha;
-    function generate() {
+                                    const randomchar =
+                                            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-        // Clear old input
-        document.getElementById("submitLogin").value = "";
+                                    // Generate captcha for length of
+                                    // 5 with random character
+                                    for (let i = 1; i < 6; i++) {
+                                        uniquechar += randomchar.charAt(
+                                                Math.random() * randomchar.length);
+                                    }
 
-        // Access the element to store
-        // the generated captcha
-        captcha = document.getElementById("image");
-        var uniquechar = "";
+                                    // Store generated input
+                                    captcha.innerHTML = uniquechar;
+                                }
 
-        const randomchar =
-                "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+                                function printmsg() {
+                                    const usr_input = document
+                                            .getElementById("submitLogin").value;
 
-        // Generate captcha for length of
-        // 5 with random character
-        for (let i = 1; i < 6; i++) {
-            uniquechar += randomchar.charAt(
-                    Math.random() * randomchar.length)
-        }
-
-        // Store generated input
-        captcha.innerHTML = uniquechar;
-    }
-
-    function printmsg() {
-        const usr_input = document
-                .getElementById("submitLogin").value;
-
-        // Check whether the input is equal
-        // to generated captcha or not
-        if (usr_input == captcha.innerHTML) {
-            document.getElementById("btnRegister")
-                    .disabled = false;
-            var s = document.getElementById("key")
-                    .innerHTML = "CapCha Matched";
-            generate();
-        } else {
-            var s = document.getElementById("key")
-                    .innerHTML = "CapCha Not Matched";
-            generate();
-        }
-    }
-    </script>
-</body>
-
+                                    // Check whether the input is equal
+                                    // to generated captcha or not
+                                    if (usr_input === captcha.innerHTML) {
+                                        document.getElementById("btnRegister")
+                                                .disabled = false;
+                                        var s = document.getElementById("key")
+                                                .innerHTML = "CapCha Matched";
+                                        generate();
+                                    } else {
+                                        var s = document.getElementById("key")
+                                                .innerHTML = "CapCha Not Matched";
+                                        generate();
+                                    }
+                                }
+        </script>
+    </body>
 </html>

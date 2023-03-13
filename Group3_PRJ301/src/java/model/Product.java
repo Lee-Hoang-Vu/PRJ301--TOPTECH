@@ -22,22 +22,10 @@ public class Product {
     private String description;
     private Date createDate;
 
-    private int size;
-
     public Product() {
     }
 
-//    public Product(int id, String name, double price, int stock, Category category, String img, String description, Date createDate) {
-//        this.id = id;
-//        this.name = name;
-//        this.price = price;
-//        this.stock = stock;
-//        this.category = category;
-//        this.img = img;
-//        this.description = description;
-//        this.createDate = createDate;
-//    }
-   public Product(int id, String name, double price, int stock, Category category, String img, String description, Date createDate, int size) {
+   public Product(int id, String name, double price, int stock, Category category, String img, String description, Date createDate) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -46,16 +34,7 @@ public class Product {
         this.img = img;
         this.description = description;
         this.createDate = createDate;
-        this.size = size;
     }
-    public int getSize() {
-        return size;
-    }
-
-    public void setSize(int size) {
-        this.size = size;
-    }
-
     public int getId() {
         return id;
     }

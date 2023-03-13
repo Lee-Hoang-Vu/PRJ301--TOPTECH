@@ -9,41 +9,18 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> Shop</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
         <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <!--<link rel="stylesheet" href="assets/css/style.css">-->
-        <link rel="stylesheet" href="assets/css/main-color.css">
-
     </head>
 
     <body class="biolife-body">
 
         <nav class="navbar navbar-default">
             <div class="container">
-
-                <!-- BRAND -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                    </button>
-                    <a class="navbar-brand" href="HomePage">Online Shop</a>
-                </div>
                 <!-- COLLAPSIBLE NAVBAR -->
                 <div class="collapse navbar-collapse" id="alignment-example">
-
                     <!-- Links -->
                     <ul class="nav navbar-nav">
-                        <li >
-                            <a href="HomePage" class="nav-link" style="font-size: 20px;">Dashboard</a>
-                        </li>
                         <li >
                             <a style="text-decoration: none;" href="ManagerUser"> Manage User</a>
                         </li>

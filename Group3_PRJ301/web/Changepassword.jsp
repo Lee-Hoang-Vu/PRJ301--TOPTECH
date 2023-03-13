@@ -1,87 +1,94 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Profile</title>
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="assets/css/main-color.css">
-
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./css/login.css">
     </head>
 
     <body class="biolife-body" onload="generate()">
 
         <jsp:include page="header1.jsp"/>
-
-
-        <div class="page-contain login-page">
-
-            <!-- Main content -->
-            <div id="main-content" class="main-content">
-                <div class="container">
-
-                    <div class="row">
-
-                        <div class="col-12">
-                            <h3 class="box-title" style="display: inline;">Change password</h3><br>
-
-                            <form method="post" action="Changepassword">
-                                <div  class="col-md-12">
-                                    <label class="" >Old Password:</label><input class="form-control" type="password"name="oldpass">
+          <section>
+                    <div class="noi-dung">
+                        <div class="form">
+                            <h2>Change Password</h2>
+                            <form action="Changepassword" method="post">
+                                <div class="input-form">
+                                    <label for="fid-name">Old Password:</label>
+                                    <input type="password" id="fid-name" name="oldpass" value="" class="txt-input">
                                 </div>
-                                <div  class="col-md-12">
-                                    <label class="" >New Password::</label><input class="form-control" type="password"  name="newpass">
+                                <div class="input-form">
+                                    <label for="fid-name">New Password:</label>
+                                    <input type="password" id="fid-name" name="newpass" value="" class="txt-input">
                                 </div>
-                                <div  class="col-md-12">
-                                    <label class="" >Re-newPass:</label><input class="form-control" type="password"  name="renewpass">
+                                <div class="input-form">
+                                    <label for="fid-name">Re-newPass:</label>
+                                    <input type="password" id="fid-name" name="renewpass" value="" class="txt-input">
                                 </div>
-                                <div  class="col-md-12" style="padding: 2px;">           
-                                    <p style="color: red;">${mess}</p>
-                                </div>
-                                <div  class="col-md-4">
-
-                                    <div id="user-input"style="display: inline;cursor: pointer" class="inline">
-                                        <input type="text" id="submitLogin"
-                                               placeholder="Captcha code" >
-                                    </div>
-
-                                    <div style="display: inline;cursor: pointer; "  onclick="generate()">
-                                        Change
-                                    </div>
-
-                                    <div style=" box-shadow: 5px 5px 5px 5px gray; font-weight: 400;user-select: none;margin-top: 10px; margin-bottom: 20px; padding: 5px;text-decoration:line-through; width: 150px;" id="image" class="inline" selectable="False">
-                                    </div>
-                                    <div id="btn" onclick="printmsg()" style="display: inline;" class="btn btn-default">Check</div>
-
-                                    <p id="key" style="color: black" ></p>
+                                <div style="width: 25%" class="input-form">
+                                    <input type="text" id="submitLogin"
+                                           placeholder="Captcha code" >
                                 </div>
 
-                                <div  class="col-md-12">
-                                    <input class="btn btn-primary" disabled="" type="submit" id="btnRegister" value="Edit" >
+                                <span onclick="generate()" 
+                                      style="
+                                      display: inline-block;
+                                      cursor: pointer;
+                                      background-color: wheat;
+                                      font-size: 18px;
+                                      border-radius: 10px;
+                                      box-shadow: 0px 2px 2px 2px grey;">
+                                    Change
+                                </span>
+                                <span 
+                                    style="
+                                    display: inline-block;
+                                    width: 11%;
+                                    box-shadow: 0px 2px 4px 2px grey;
+                                    font-weight: 400;
+                                    font-weight: 400;
+                                    margin: 0px 10px -8px;
+                                    padding: 6px;
+                                    text-decoration: line-through;" id="image" class="inline" selectable="False">
+                                </span>
+
+                                <span id="bt" onclick="printmsg()" 
+                                      style="display: inline-block;
+                                      cursor: pointer;
+                                      background-color: wheat;
+                                      font-size: 18px;
+                                      border-radius: 10px;
+                                      box-shadow: 0px 2px 2px 2px grey;
+                                      margin: 0px 10px 0px;" >Check</span><br/><br/>
+
+                                <p id="key" style="color: red" ></p>
+
+                                <p style="color: red;">${mess}</p>
+                                <div class="input-form">
+                                    <button  disabled="" id="btnRegister" type="submit">Edit</button>
                                 </div>
                             </form>
                         </div>
-
                     </div>
-
-                </div>
-
-            </div>
-
-        </div>
+                </section>   
 
         <jsp:include page="footer.jsp"/>
 

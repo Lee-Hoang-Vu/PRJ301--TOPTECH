@@ -1,128 +1,135 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- 
+    Document   : home
+    Created on : Mar 1, 2023, 4:07:25 PM
+    Author     : asus
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
     <head>
+        <!-- basic -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- mobile metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Shop</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- site metas -->
+        <title>SHOP</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/nice-select.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/slick.min.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/main-color.css">
-
-
+        <!-- bootstrap css -->s
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     </head>
 
-    <body class="biolife-body">
-
-        <jsp:include page="header1.jsp"/>
-
-        <!-- Page Contain -->
-        <div class="page-contain">
-
-            <!-- Main content -->
-            <div id="main-content" class="main-content">
-                <h1 style="color: green;font-size: 50px; font-weight: 700;text-align: center; ">Trang chu</h1>
-
-                <!--Block 03: Product Tab-->
-                <div class="product-tab z-index-20 sm-margin-top-193px xs-margin-top-30px">
+    <body class="main-layout">
+        <div class="wrapper">
+            <div id="content">
+                <jsp:include page="header1.jsp"/>        
+                <!-- Categories -->
+                <div style="background-color: white" class="Categories">
                     <div class="container">
-                        <div class="biolife-tab biolife-tab-contain sm-margin-top-34px">
-                            <div class="tab-head tab-head__icon-top-layout icon-top-layout">
-                                <h1 style="color: black; font-weight: 600;text-align: center; ">Moi Cap Nhat</h1>
-                                <div class="row" style="margin-bottom: 50px;">
-                                    <ul class="products-list" style="list-style: none;">
-                                        <c:forEach var="p" items="${plist}">
-                                            <li class="product-item col-lg-4 col-xs-6" style="min-height: 550px;">
-                                                <div class="contain-product layout-default">
-                                                    <div class="product-thumb">
-                                                        <a href="./ProductDetails?pid=${p.getId()}" class="link-to-product" style="display: block; width: 300px; height: 300px; padding: auto;">
-                                                            <img src="${p.getImg()}" alt="img" width="300" height="300" style="margin-left: 8%;">
-                                                        </a>
-                                                    </div>
-                                                    <div class="info">
-                                                        <h4 class="product-title"  style="margin-top: 25px;"><a style="color: white;" href="./ProductDetails?pid=${p.getId()}" class="pr-name">Name: ${p.getName()}</a></h4>
-                                                        <div class="price">
-                                                            <ins><span class="price-amount" style="color: white;" >Price: <span class="currencySymbol">$</span>${p.getPrice()}</span></ins>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </c:forEach>
-
+                        <div class="row">
+                            <div class="col-md-12">
+                                <img style="width: 100%; border-radius: 0px;margin-top:16px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
+                                <div class="title">
+                                    <form style="
+                                          color: #555;
+                                          display: flex;
+                                          padding: 2px;
+                                          border: 1px solid currentColor;
+                                          border-radius: 16px;
+                                          width: 30%;
+                                          float: right;
+                                          " action="ProductList?index=1" name="desktop-seacrh" method="get">
+                                        <input style="
+                                               border: none;
+                                               background: transparent;
+                                               margin: 0;
+                                               padding-right: 160px;
+                                               font-size: 14px;
+                                               color: inherit;
+                                               border: 1px solid transparent;
+                                               border-radius: 10px;
+                                               float: left;
+                                               " type="text" name="search"  class="input-text" value="" placeholder="search product...">
+                                        <i style="font-size: 25px; padding: 7px; float: right" class='fa fa-search'></i>
+                                    </form> 
+                                    <h2> Categories</h2>
+                                    <ul class="categiri">
+                                        <li><a href="./categoryList?index=1">Phone</a></li>
+                                        <li><a href="./categoryList?index=2">Laptop</a></li>
+                                        <li><a href="./categoryList?index=3">Computer Screen</a></li>
+                                        <li><a href="./categoryList?index=4">Keyboard</a></li>
+                                        <li><a href="./categoryList?index=5">Mouse</a></li>
                                     </ul>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="product-tab z-index-20 sm-margin-top-193px xs-margin-top-30px">
-                    <div class="container">
-                        <div class="biolife-tab biolife-tab-contain sm-margin-top-34px">
-                            <div class="tab-head tab-head__icon-top-layout icon-top-layout">
-                                <ul class="tabs md-margin-bottom-35-im xs-margin-bottom-40-im">
-                                    <li class="tab-element">
-                                        <h1 style="color: black; font-weight: 600; ">Ban chay nhat</h1>
-                                    </li>
 
-                                </ul>
-                                <div class="row" style="margin-bottom: 50px;">
-                                    <ul class="products-list" style="list-style: none;">
-                                        <c:forEach var="p" items="${plist1}">
-
-                                            <li class="product-item col-lg-4 col-xs-6">
-                                                <div class="contain-product layout-default">
-                                                    <div class="product-thumb">
-                                                        <a href="./ProductDetails?pid=${p.getId()}" class="link-to-product" style="display: block; width: 300px; height: 300px; padding: auto;">
-                                                            <img src="${p.getImg()}" alt="img" width="300" height="300" style="margin-left: 8%;">
-                                                        </a>
-                                                    </div>
-                                                    <div class="info">
-                                                        <h4 class="product-title" style="margin-top: 25px;"><a href="./ProductDetails?pid=${p.getId()}" style="color: white;" class="pr-name">${p.getName()}</a></h4>
-                                                        <div class="price">
-                                                            <ins ><span class="price-amount"  style="color: white;">Price: <span class="currencySymbol">$</span >${p.getPrice()}</span></ins>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </c:forEach>
-
-                                    </ul>
+                        <!-- news brand -->
+                        <div id="brand"  class="brand-bg">
+                            <h3>New brands</h3>
+                            <div class="row">
+                                <div class="places-list">
+                                    <c:forEach var="p" items="${plist}">
+                                        <div class="place-item"> 
+                                            <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
+                                                <img src="${p.getImg()}" alt="img">
+                                            </a>
+                                            <div class="place-body">
+                                                <h4 class="place-heading"" href="./ProductDetails?pid=${p.getId()}" class="pr-name">${p.getName()}</a></h4>
+                                                <div class="place-price">
+                                                    <ins><span>Price: <span class="currencySymbol">$</span>${p.getPrice()}</span></ins>
+                                                </div>               
+                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
+                                            </div>
+                                        </div>
+                                    </c:forEach>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div id="sh" class="sh">
+                            <h3>Best Seller</h3>
+                            <div class="row">
+                                <div class="places-list">
+                                    <c:forEach var="p" items="${plist1}">                              
+                                        <div class="place-item">
+                                            <a href="./ProductDetails?pid=${p.getId()}" class="place-img">
+                                                <img src="${p.getImg()}" alt="img">
+                                            </a>
+                                            <div class="place-body">
+                                                <h4 class="place-heading"><a href="./ProductDetails?pid=${p.getId()}"class="pr-name">${p.getName()}</a></h4>
+                                                <div class="place-price">
+                                                    <ins><span>Price: <span class="currencySymbol">$</span >${p.getPrice()}</span></ins>
+                                                </div>
+                                                <a href="./ProductDetails?pid=${p.getId()}" class="place-buy">ORDER</a>
+                                            </div>
+                                        </div>
+                                    </c:forEach>                   
+                                </div>       
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>          
+            <!--  footer -->
+            <jsp:include page="footer.jsp"/>
+            <!-- end footer -->
         </div>
-        <jsp:include page="footer.jsp"/>
-
-
-
-        <!-- Scroll Top Button -->
-        <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
-
-        <script src="assets/js/jquery-3.4.1.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.min.js"></script>
-        <script src="assets/js/slick.min.js"></script>
-        <script src="assets/js/biolife.framework.js"></script>
-        <script src="assets/js/functions.js"></script>
+        <div class="overlay"></div>
     </body>
-
 </html>

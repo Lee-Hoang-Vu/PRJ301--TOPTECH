@@ -5,8 +5,10 @@
  */
 package dao;
 
+import java.lang.reflect.Array;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.*;
@@ -44,7 +46,7 @@ public class ProductDAO extends DBContext {
                 + "] p, Category c where p.category_id = c.category_id \n"
                 + "  and p.category_id like ?  and p.product_name like ?  "
                 + sortby
-                + "  OFFSET ? ROWS FETCH NEXT 6  ROWS ONLY";
+                + "  OFFSET ? ROWS FETCH NEXT 8 ROWS ONLY";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
             ps.setString(1, "%" + cid + "%");
@@ -52,7 +54,7 @@ public class ProductDAO extends DBContext {
             ps.setInt(3, (index - 1) * 6);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8), rs.getInt(9)));
+                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8)));
             }
         } catch (Exception e) {
         }
@@ -61,14 +63,14 @@ public class ProductDAO extends DBContext {
 
     public ArrayList<Product> getTopSelling() {
         ArrayList<Product> list = new ArrayList<>();
-        String sql = "select top 6 p.*,c.* from Product p, (select sum(quantity) as numberSell, product_id from OrderDetail group by product_id) as b, Category c\n"
+        String sql = "select top 8 p.*,c.* from Product p, (select sum(quantity) as numberSell, product_id from OrderDetail group by product_id) as b, Category c\n"
                 + " where b.product_id = p.product_id and p.category_id = c.category_id order by b.numberSell desc";
         try {
             PreparedStatement ps = connection.prepareStatement(sql);
 
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8), rs.getInt(9)));
+                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8)));
             }
         } catch (Exception e) {
         }
@@ -86,7 +88,7 @@ public class ProductDAO extends DBContext {
             ps.setString(2, "%" + search + "%");
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8), rs.getInt(9)));
+                list.add(new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8)));
                 
             }
         } catch (Exception e) {
@@ -119,7 +121,7 @@ public class ProductDAO extends DBContext {
             ps.setInt(1, pid);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
-                Product p = new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8), rs.getInt(9));
+                Product p = new Product(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getInt(4), new Category(rs.getInt("category_id"), rs.getString("category_name")), rs.getString(6), rs.getString(7), rs.getDate(8));
                 return p;
             }
         } catch (Exception e) {
@@ -184,5 +186,5 @@ public class ProductDAO extends DBContext {
         } catch (Exception e) {
         }
     }
-
+    
 }
