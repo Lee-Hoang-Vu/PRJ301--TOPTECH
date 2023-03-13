@@ -124,6 +124,32 @@
     <servlet>
         <servlet-name>VerifyEmail</servlet-name>
         <servlet-class>controller.VerifyEmail</servlet-class>
+        <servlet-name>CategoryList</servlet-name>
+        <servlet-class>controller.CategoryList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>phoneList</servlet-name>
+        <servlet-class>controller.phoneList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>laptopList</servlet-name>
+        <servlet-class>controller.laptopList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>screenList</servlet-name>
+        <servlet-class>controller.screenList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>keyboardList</servlet-name>
+        <servlet-class>controller.keyboardList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>mouseList</servlet-name>
+        <servlet-class>controller.mouseList</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>categoryList</servlet-name>
+        <servlet-class>controller.categoryList</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>LoginController</servlet-name>
@@ -220,6 +246,32 @@
     <servlet-mapping>
         <servlet-name>VerifyEmail</servlet-name>
         <url-pattern>/verifyEmail</url-pattern>
+        <servlet-name>CategoryList</servlet-name>
+        <url-pattern>/CategoryList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>phoneList</servlet-name>
+        <url-pattern>/phoneList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>laptopList</servlet-name>
+        <url-pattern>/laptopList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>screenList</servlet-name>
+        <url-pattern>/screenList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>keyboardList</servlet-name>
+        <url-pattern>/keyboardList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>mouseList</servlet-name>
+        <url-pattern>/mouseList</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>categoryList</servlet-name>
+        <url-pattern>/categoryList</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -227,6 +279,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>login</welcome-file>
+        <welcome-file>HomePage</welcome-file>
     </welcome-file-list>
 </web-app>

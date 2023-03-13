@@ -1,0 +1,75 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Mar 1, 2023, 11:51:32 PM
+    Author     : asus
+*/
+
+ 
+ section .noi-dung{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     width: 100%;
+     height: 100%;
+     padding-bottom: 40px; 
+ }
+section .noi-dung .form{
+     width: 50%;
+     margin-top: 90px;
+ }
+section .noi-dung .form h2{
+    color: #607d8b;
+    font-weight: 900;
+    font-size: 3.5em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid black;
+    display: inline-block;
+    letter-spacing: 9px;
+ }
+ section .noi-dung .form .input-form{
+     margin-bottom: 20px;
+ }
+section .noi-dung .form .input-form label{
+     font-size: 16px;
+     margin-bottom: 5px;
+     display: inline-block;
+     color: #607db8;
+     letter-spacing: 1px;
+      }
+section .noi-dung .form .input-form input{
+     width: 100%;
+     padding: 10px 23px;
+     outline: none;
+     border: 1px solid #607d8b;
+     font-size: 16px;
+     letter-spacing: 1px;
+     color: #607d8b;
+     background: transparent;
+     border-radius: 30px;
+     }
+ section .noi-dung .form .input-form button[type="submit"]{
+    background: gray;
+    color: black;
+    outline: none;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    height: 39px;
+    border-radius: 10px;
+ }
+section .noi-dung .form .input-form button[type="submit"]:hover{
+     background: black;
+     color: wheat;
+ }
+
+ section .noi-dung .form .input-form p{
+     color: #607d8b;
+ }
+section .noi-dung .form .input-form p a{
+     color: #ff4584;
+ }

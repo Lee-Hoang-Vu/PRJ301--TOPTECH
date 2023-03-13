@@ -1,105 +1,112 @@
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%-- 
+    Document   : userprofile
+    Created on : Mar 2, 2023, 11:15:05 PM
+    Author     : asus
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 
     <head>
+        <!-- basic -->
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- mobile metas -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> Shop</title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        <!-- site metas -->
+        <title>SHOP</title>
 
-        <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Poppins:600&amp;display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i,700i" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Ubuntu&amp;display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-        <link rel="stylesheet" href="assets/css/animate.min.css">
-        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/nice-select.css">
-        <link rel="stylesheet" href="assets/css/slick.min.css">
-        <!--<link rel="stylesheet" href="assets/css/style.css">-->
-        <link rel="stylesheet" href="assets/css/main-color.css">
-
+        <!-- bootstrap css -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- style css -->
+        <link rel="stylesheet" href="css/profile.css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Responsive-->
+        <link rel="stylesheet" href="css/responsive.css">
+        <!-- fevicon -->
+        <link rel="icon" href="images/fevicon.png" type="image/gif" />
+        <!-- Scrollbar Custom CSS -->
+        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <!-- Tweaks for older IEs-->
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
     </head>
+    <!-- body -->
 
-    <body class="biolife-body">
+    <body class="main-layout">
 
-        <nav class="navbar navbar-default">
-            <div class="container">
+        <div class="wrapper">
+            <div id="content">
+                <header>
+                    <!-- header inner -->
+                    <div class="head_top">
+                        <div class="header">
 
-                <!-- BRAND -->
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#alignment-example" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                    </button>
-                    <a class="navbar-brand" href="HomePage">Online Shop</a>
-                </div>
-                <!-- COLLAPSIBLE NAVBAR -->
-                <div class="collapse navbar-collapse" id="alignment-example">
+                            <div class="container-fluid">
 
-                    <!-- Links -->
-                    <ul class="nav navbar-nav">
-                        <li >
-                            <a href="HomePage" class="nav-link" style="font-size: 20px;">Dashboard</a>
-                        </li>
-                        <li >
-                            <a style="text-decoration: none;" href="ManagerUser"> Manage User</a>
-                        </li>
-                        <li >
-                            <a style="text-decoration: none;" href="ManagerProduct"> Manage Product</a>
-                        </li>
-
-                        <li >
-                            <a style="text-decoration: none;" href="HomePage">Back</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </nav>
-        <!-- Main content -->
-        <div id="main-content" class="main-content">
-            <div class="container-fluid">
-
-                <div class="row" >
-                    <div class="col-md-12">
-                        <h1>Dashboard</h1>
-                        <div class="col-md-3">
-                            <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Product: ${nump}</button>
-
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Order: ${numo}</button>
-
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Customer: ${numu}</button>
-
-                        </div>
-                        <div class="col-md-3">
-                            <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Profit : ${profit}$</button>
-
-                        </div>
-
-
+                                <div class="row">
+                                    <div class="col-lg-1 logo_section">
+                                        <div class="full">
+                                            <div class="center-desk">
+                                                <div class="logo">
+                                                    <img style="    padding-bottom: 192px;
+                                                         margin-bottom: -194px;"  src="images/logo.png" alt="#">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <div class="right_header_info">
+                                            <ul>
+                                                <li class="menu_iconb">
+                                                    <a href="ManagerUser">MANAGE USER</a>
+                                                </li>
+                                                <li class="menu_iconb">
+                                                    <a href="ManagerProduct">MANAGE PRODUCT </a>
+                                                </li>
+                                                <li class="menu_iconb">
+                                                    <a href="HomePage">BACK</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>     
                     </div>
-                </div>
+                </header>
+
+                <section style="padding-top: 59px; padding-left: 80px; padding-bottom: 209px">
+                    <table>
+                        <tr> 
+                            <td colspan="3"><h1 style="font-weight: 500; text-align: center">DASH BOARD</h1> </td>  
+                        </tr>
+                        <tr> 
+                            <td> <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Product: ${nump}</button>
+                                </div> </td>  
+                            <td>  
+                                <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Order: ${numo}</button>
+                                </div> </td>  
+                            <td>     <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Number Of Customer: ${numu}</button>
+                                </div></td>  
+                            <td>   <div class="col-md-3">
+                                    <button type="button" class="btn btn-info btn-lg " data-toggle="modal" data-target="#myModalAddNew">Profit : ${profit}$</button>
+                                </div> </td>  
+                        </tr>
+                    </table>
+                </section>
+                <jsp:include page="footer.jsp"/>
             </div>
-        </div>
+        </div>         
 
-        <!-- Scroll Top Button -->
-        <a class="btn-scroll-top"><i class="biolife-icon icon-left-arrow"></i></a>
+        <!-- end footer -->
 
-        <script src="assets/js/jquery-3.4.1.min.js"></script>
-        <script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/jquery.countdown.min.js"></script>
-        <script src="assets/js/jquery.nice-select.min.js"></script>
-        <script src="assets/js/jquery.nicescroll.min.js"></script>
-        <script src="assets/js/slick.min.js"></script>
-        <script src="assets/js/biolife.framework.js"></script>
-        <script src="assets/js/functions.js"></script>
+        <div class="overlay"></div>
     </body>
-
 </html>
