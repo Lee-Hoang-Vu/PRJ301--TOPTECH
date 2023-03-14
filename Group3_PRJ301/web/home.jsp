@@ -32,6 +32,7 @@
         <!-- Tweaks for older IEs-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        
     </head>
 
     <body class="main-layout">
@@ -42,9 +43,10 @@
                 <div style="background-color: white" class="Categories">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12">
-                                <img style="width: 100%; border-radius: 0px;margin-top:16px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
+                            <div class="col-md-12">   
+                                <img style="width: 100%; border-radius: 0px;margin-top:16px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">          
                                 <div class="title">
+                                      <jsp:include page="clock.jsp"/>
                                     <form style="
                                           color: #555;
                                           display: flex;
@@ -78,7 +80,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- news brand -->
                         <div id="brand"  class="brand-bg">
                             <h3>New brands</h3>
@@ -131,5 +132,43 @@
             <!-- end footer -->
         </div>
         <div class="overlay"></div>
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.countdown.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery.nicescroll.min.js"></script>
+        <script src="js/slick.min.js"></script>
+        <script src="js/biolife.framework.js"></script>
+        <script src="js/functions.js"></script>
+        <script type='text/javascript'>
+            document.addEventListener('DOMContentLoaded', () => {
+
+                // Unix timestamp (in seconds) to count down to
+                var twoDaysFromNow = (new Date().getTime() / 1000) + (86400 * 2) + 1;
+
+                // Set up FlipDown
+                var flipdown = new FlipDown(twoDaysFromNow)
+
+                        // Start the countdown
+                        .start()
+
+                        // Do something when the countdown ends
+                        .ifEnded(() => {
+                            console.log('The countdown has ended!');
+                        });
+
+                // Toggle theme
+                var interval = setInterval(() => {
+                    let body = document.body;
+                    body.classList.toggle('light-theme');
+                    body.querySelector('#flipdown').classList.toggle('flipdown__theme-dark');
+                    body.querySelector('#flipdown').classList.toggle('flipdown__theme-light');
+                }, 5000);
+
+                var ver = document.getElementById('ver');
+                ver.innerHTML = flipdown.version;
+            });
+        </script>
     </body>
 </html>
