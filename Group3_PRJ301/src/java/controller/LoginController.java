@@ -66,6 +66,7 @@ public class LoginController extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
+        
         try {
             HttpSession session = request.getSession();
             String email = request.getParameter("email");

@@ -6,7 +6,7 @@ package controller;
 
 /**
  *
- * @author Khangnekk
+ * @author Sio
  */
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
@@ -18,14 +18,16 @@ import java.util.Properties;
 import java.util.Random;
 import javax.mail.*;
 import javax.mail.internet.*;
+import model.User;
 
 public class SendMail extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-// Get recipient email address and message from form data
-        String recipient = request.getParameter("recipient");
+        // Get recipient email address and message from form data
+        User u = (User) request.getSession().getAttribute("newuser");
+        String recipient = u.getEmail();
         String verifyCode = getRandomNumberString();
         String message = messageProcess(verifyCode);
 
@@ -35,8 +37,10 @@ public class SendMail extends HttpServlet {
 
         // Set up mail server and authentication
         String host = "smtp.gmail.com";
-        String user = "thegalaxy2308@gmail.com";
-        String password = "ollvprlecgkrgzbf";
+//        String user = "thegalaxy2308@gmail.com";
+//        String password = "ollvprlecgkrgzbf";
+        String user = "toptech8868@gmail.com";
+        String password = "kwtlqinytpukcwns";
 
         // Create properties object for the mail session
         Properties props = new Properties();
@@ -62,27 +66,75 @@ public class SendMail extends HttpServlet {
             msg.setText(message);
 
             // Send message
-            javax.mail.Transport.send(msg);
+            Transport.send(msg);
 
             // Redirect to success page
             request.getRequestDispatcher("Verify.jsp").forward(request, response);
         } catch (MessagingException e) {
             // Redirect to error page
-            response.getWriter().print("error");
+            response.getWriter().print("error..get");
         }
     }
 
     /**
      *
-     * @param req
-     * @param resp
+     * @param request
+     * @param response
      * @throws ServletException
      * @throws IOException
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        this.doPost(req, resp);
-        req.getRequestDispatcher("EnterMail.jsp").forward(req, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Get recipient email address and message from form data
+        User u = (User) request.getSession().getAttribute("newuser");
+        String recipient = u.getEmail();
+        String verifyCode = getRandomNumberString();
+        String message = messageProcess(verifyCode);
+
+        HttpSession verifyPremium = request.getSession();
+        verifyPremium.setAttribute("verifyCode", verifyCode);
+        verifyPremium.setMaxInactiveInterval(60);
+
+        // Set up mail server and authentication
+        String host = "smtp.gmail.com";
+//        String user = "thegalaxy2308@gmail.com";
+//        String password = "ollvprlecgkrgzbf";
+        String user = "toptech8868@gmail.com";
+        String password = "kwtlqinytpukcwns";
+
+        // Create properties object for the mail session
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", host);
+        props.put("mail.smtp.port", "587");
+
+        // Create mail session and authenticate with credentials
+        Session session = Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(user, password);
+            }
+        });
+
+        try {
+            // Create message and set recipient, subject, and message body
+            Message msg = new MimeMessage(session);
+            msg.setFrom(new InternetAddress(user));
+            msg.setRecipient(Message.RecipientType.TO, new InternetAddress(recipient));
+            msg.setSubject("Upgrade to a premium account");
+            msg.setText(message);
+
+            // Send message
+            Transport.send(msg);
+
+            // Redirect to success page
+            request.getRequestDispatcher("Verify.jsp").forward(request, response);
+//response.getWriter().print("success");
+        } catch (MessagingException e) {
+            // Redirect to error page
+            response.getWriter().print("error..get");
+        }
     }
 
     /**
@@ -106,8 +158,9 @@ public class SendMail extends HttpServlet {
      */
     public static String messageProcess(String verifyCode) {
         String message = "Hello,\n"
-                + "You have sign uo successfully\n"
-                + "Welcome to TOPTECH Official " + verifyCode;
+                + "We really thank you for taking time to help us verify your email.\n"
+                + "Your verification code is: " + verifyCode;
+
         return message;
     }
 }

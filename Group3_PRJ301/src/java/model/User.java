@@ -19,6 +19,9 @@ public class User {
     private String phone;
     private Roles roles;
 
+    public User() {
+    }    
+    
     public User(int id, String name, String email, String password, String address, Boolean gender, String phone, Roles roles) {
         this.id = id;
         this.name = name;
