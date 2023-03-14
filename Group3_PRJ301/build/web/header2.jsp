@@ -53,6 +53,7 @@
                                         <div class="logo">
                                             <img style="    padding-bottom: 192px;
                                                  margin-bottom: -194px;" src="images/logo.png" alt="#">
+                                             <div style="display: flex">TOPTECH</div>
                                         </div>
                                     </div>
                                 </div>

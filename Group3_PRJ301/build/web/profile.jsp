@@ -69,7 +69,7 @@
                             <div  class="address">
                                 <label class="address1" >Address</label><input class="address2" type="text" value="${sessionScope['account'].getAddress()}" name="address">
                             </div>
-                            <a href="Changepassword.jsp" class="change">Change password</a>
+                            <a style="margin-left: 21%;" href="Changepassword.jsp" class="change">Change password</a>
                             <div  class="" style="padding: 2px;">           
                                 <input value="${sessionScope['account'].getId()}" name="id" type="hidden">
                             </div>
