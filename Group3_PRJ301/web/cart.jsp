@@ -57,8 +57,8 @@
                                 <table style="text-align: center" class="shoptable" border="1px">
                                     <thead class="head">
                                         <tr>
-                                            <th style="font-size: 26px; color: wheat">Product Name</th>
-                                            <th style="font-size: 26px; color: wheat">Product Img</th>
+                                            <th style="font-size: 26px; color: wheat">Name</th>
+                                            <th style="font-size: 26px; color: wheat">Image</th>
                                             <th style="font-size: 26px; color: wheat">Price</th>
                                             <th style="font-size: 26px; color: wheat">Quantity</th>
                                             <th style="font-size: 26px; color: wheat">Total</th>
@@ -79,19 +79,29 @@
 
                                                 <td class="product-price" data-title="Price">
                                                     <div class="price price-contain">
-                                                        <ins><span style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()}</span></ins>
+                                                        <ins><span style="font-size: 22px;color: black; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()}</span></ins>
                                                     </div>
                                                 </td>
+                                                <!-- <td class="" data-title="Quantity">
+                                                     <div class="">
+                                                  <div class="">
+                                               <input type="text" name="qty12554" value="${cart.getQuantity()}">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </td>-->
                                                 <td class="" data-title="Quantity">
-                                                    <div class="">
-                                                        <div class="">
+                                                    <div class="">         
+                                                        <form action = "./AddQuanlity?pid=${cart.getProduct().getId()}">
+                                                            <button name="act" type="submit" value="minus">-</button> 
                                                             <input type="text" name="qty12554" value="${cart.getQuantity()}">
-                                                        </div>
+                                                            <input type="hidden" name="pid" value ="${cart.getProduct().getId()}">
+                                                            <button name="act" type="submit" value="add">+</button> 
+                                                        </form>
                                                     </div>
                                                 </td>
                                                 <td class="product-subtotal" data-title="Total">
                                                     <div class="price price-contain">
-                                                        <ins><span  style="font-size: 22px; text-decoration: none; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()*cart.getQuantity()}</span></ins>
+                                                        <ins><span  style="font-size: 22px;color: black; "><span class="currencySymbol">$</span>${cart.getProduct().getPrice()*cart.getQuantity()}</span></ins>
                                                     </div>
                                                 </td>
                                                 <td class="" data-title="Total">

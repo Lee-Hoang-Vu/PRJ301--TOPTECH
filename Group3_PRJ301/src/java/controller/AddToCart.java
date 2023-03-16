@@ -60,8 +60,7 @@ public class AddToCart extends HttpServlet {
             } catch (Exception e) {
                 response.sendRedirect("./404.html");
             }
-        }
-        
+        }      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -42,9 +42,7 @@
             <!-- header inner -->
             <div class="head_top">
                 <div class="header">
-
                     <div class="container-fluid">
-
                         <div style="margin-right: -207px" class="row">
                             <div class="col-lg-1 logo_section">
                                 <div class="full">
@@ -52,6 +50,7 @@
                                         <div class="logo">
                                             <img style="    padding-bottom: 192px;
                                                  margin-bottom: -194px;" src="images/logo.png" alt="#">
+                                            <div style="display: flex; color: white">TOPTECH</div>
                                         </div>
                                     </div>
                                 </div>

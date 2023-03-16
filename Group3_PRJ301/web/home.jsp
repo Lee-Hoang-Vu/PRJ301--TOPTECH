@@ -18,8 +18,7 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
         <!-- site metas -->
         <title>SHOP</title>
-
-        <!-- bootstrap css -->s
+        <!-- bootstrap css -->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <!-- style css -->
         <link rel="stylesheet" href="css/style.css">
@@ -32,6 +31,8 @@
         <!-- Tweaks for older IEs-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+        <script src="js/banner.js" defer></script>
+        <link rel="stylesheet" href="assets/css/banner.css">
     </head>
 
     <body class="main-layout">
@@ -42,9 +43,20 @@
                 <div style="background-color: white" class="Categories">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-12">
-                                <img style="width: 100%; border-radius: 0px;margin-top:16px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
+                            <div class="col-md-12">   
+                        
+                                <div class="content section">
+                                    <img class="mySlides" src="./images/1.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/2.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/3.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/4.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/5.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/6.jpg" style="width:100%">
+                                    <img class="mySlides" src="./images/7.jpg" style="width:100%">
+                                </div>
+                                
                                 <div class="title">
+                                    <jsp:include page="clock.jsp"/>
                                     <form style="
                                           color: #555;
                                           display: flex;
@@ -78,7 +90,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <!-- news brand -->
                         <div id="brand"  class="brand-bg">
                             <h3>New brands</h3>
@@ -100,8 +111,7 @@
                                     </c:forEach>
                                 </div>
                             </div>
-                        </div>
-
+                        </div>                               
                         <div id="sh" class="sh">
                             <h3>Best Seller</h3>
                             <div class="row">

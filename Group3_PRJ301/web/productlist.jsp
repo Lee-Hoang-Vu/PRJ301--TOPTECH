@@ -32,7 +32,8 @@
         <!-- Tweaks for older IEs-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
-
+        <script src="js/banner.js" defer></script>
+        <link rel="stylesheet" href="assets/css/banner.css">
     </head>
     <!-- body -->
 
@@ -45,10 +46,20 @@
 
                 <div style="background-color: white" class="container">
                     <div class="row">
-                        <div class="col-md-12 title">
-                               <img style="width: 100%; border-radius: 0px;margin-top:-63px; margin-bottom: -84px; margin-left: -3px" src="./images/head.png">
+                        <div class="content section">
+                            <img class="mySlides" src="./images/1.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/2.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/3.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/4.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/5.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/6.jpg" style="width:100%">
+                            <img class="mySlides" src="./images/7.jpg" style="width:100%">
+                        </div>
+                        <div class="col-md-12 title">               
                             <div class="title">
-                                <form action="ProductList"  method="get">
+                                <form action="ProductList"  method="get" style="    
+                                      margin-top: -94px;
+                                      margin-bottom: -41px;">
                                     <select style="
                                             background-color: black;
                                             color: wheat;
